@@ -702,6 +702,8 @@ var pjs = (function(){
                     // mark as visited
                     visited[url] = true;
                     log.msg('Scraping ' + url);
+                    log.msg('Page Content:');
+                    log.msg(page.content);
                     // load jQuery
                     page.injectJs('client/jquery.js');
                     page.evaluate(function() {
