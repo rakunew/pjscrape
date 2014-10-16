@@ -702,6 +702,10 @@ var pjs = (function(){
                     // mark as visited
                     visited[url] = true;
                     log.msg('Scraping ' + url);
+
+                    if (opts.contentOutputFile) {
+                        fs.write(opts.contentOutputFile, page.content, 'w');
+                    }
                     if (opts.debugResponse || opts.debug) {
                         log.msg('Page Content:');
                         log.msg(page.content);
